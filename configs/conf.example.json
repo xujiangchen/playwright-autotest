@@ -1,0 +1,13 @@
+{
+  "GENERAL": {
+    "ENV": "DEV",
+    "BROWSER_TYPE": "chrome",
+    "WEB_TIME_OUT": 20000,
+    "LOG_PERIOD": 7
+  },
+  "WEB_INFO": {
+    "DEV": { "BASE_URL": "www.baidu.com" },
+    "GO": { "BASE_URL": "www.baidu.com" },
+    "PRO": { "BASE_URL": "www.baidu.com" }
+  }
+}
