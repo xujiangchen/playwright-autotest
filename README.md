@@ -67,13 +67,17 @@ Copy-Item configs/conf.example.json configs/conf.json
 | `configs/` | 示例配置与调试浏览器配置。 |
 | `doc/` | 各模块的详细设计说明。 |
 
-更多说明：[配置](doc/config.md) · [浏览器池](doc/browser_pool.md) · [基础页面](doc/base_page.md) · [增强定位器](doc/enhanced_locator.md) · [日志](doc/logger.md)。
+## 详细文档
+
+`doc/` 目录提供各模块更详细的使用说明和指导。需要了解具体配置、接口或实现方式时，可按主题阅读：[配置](doc/config.md) · [浏览器池](doc/browser_pool.md) · [Debug 模式](doc/debug_mode.md) · [基础页面](doc/base_page.md) · [增强定位器](doc/enhanced_locator.md) · [日志](doc/logger.md)。
 
 ## 进阶：连接调试浏览器
 
 需要复用通过 CDP 打开的 Chrome 或 Edge 时，将 `configs/debug.json` 的 `enabled` 设为 `true`，并确保 `configs/conf.json` 中的 `BROWSER_TYPE` 为 `chrome` 或 `edge`。默认调试端口是 `9222`。
 
 运行测试时，程序会先检查该端口；若没有可用的 CDP 浏览器，会使用独立的 `.debug-browser-profile/` 启动一个。`browser_started` 是程序维护的状态字段。调试模式会复用浏览器默认 Context 中第一个非空白标签页；若打开了多个标签页，请确认其顺序。测试结束后会断开连接，浏览器窗口继续保留。退出调试模式时将 `enabled` 改回 `false`。
+
+详细配置、连接流程和排查方法见 [Debug 模式文档](doc/debug_mode.md)。
 
 ## 进阶：生成构建配置快照
 
